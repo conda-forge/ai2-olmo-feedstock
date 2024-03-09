@@ -1,5 +1,5 @@
 {% set name = "ai2-olmo" %}
-{% set version = "0.2.4" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ai2-olmo-{{ version }}.tar.gz
-  sha256: f88dd624137b342e7c1d9bf1fc166ff79df696978de144a0138bcd5f4a3cded0
+  sha256: 575443c9c1b8db826d1503426010efd08d03f536ccde363470009370a3df0e0e
 
 build:
   noarch: python
@@ -23,14 +23,14 @@ requirements:
   run:
     - python >=3.8
     - numpy
-    - pytorch >=2.0,<2.2
+    - pytorch >=2.0,<2.3
     - omegaconf
     - rich
     - boto3
     - google-cloud-storage
     - tokenizers
     - packaging
-    - cached_path
+    - cached_path >=1.6.2
     - transformers
 
 test:
