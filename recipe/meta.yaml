@@ -1,13 +1,13 @@
 {% set name = "ai2-olmo" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 978a4ca7140c2b53760b2a303bfddff6a537ae2ed9d6b9e29ecf540ccc58bc70
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 17088d0b1c166aad60f4ebb6046100f2d70339ea910e075179aeb362f63560fc
 
 build:
   noarch: python
@@ -21,11 +21,12 @@ requirements:
     - wheel
     - pip
   run:
+    - importlib_resources
     - ai2-olmo-core ==0.1.0
     - importlib-resources
     - python >=3.8
     - numpy <2
-    - pytorch >=2.1,<2.5
+    - pytorch >=2.1
     - omegaconf
     - rich
     - boto3
