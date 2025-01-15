@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 17088d0b1c166aad60f4ebb6046100f2d70339ea910e075179aeb362f63560fc
+  patches:
+    - 0001-Python-3.9-fixes.patch
 
 build:
   noarch: python
